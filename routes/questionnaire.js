@@ -84,5 +84,15 @@ router.post('/', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+// Route for opt-in
+router.post('/opt-in', (req, res) => {
+  const { emailOptIn, score } = req.body;
+  if (emailOptIn) {
+    // Handle opt-in logic
+    res.status(200).json({ success: true, message: 'Opt-in successful.' });
+  } else {
+    res.status(400).json({ success: false, message: 'Opt-in failed.' });
+  }
+});
 
 module.exports = router;

@@ -1,4 +1,3 @@
-// routes/auth.js
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User'); // Ensure the User model is correctly defined and exported
@@ -34,7 +33,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-// Verify token route - Modified to handle GET requests
+// Verify token route
 router.get('/verify', async (req, res) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1]; // Expect 'Bearer <token>'
