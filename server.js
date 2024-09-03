@@ -12,6 +12,14 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+// Existing code
+
+// Status route
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Server is running' });
+});
+
+// Existing code
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI, {
